@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  background: rgba(243, 237, 231, 0.658);
+  color: rgb(17, 17, 17);
+}
+
+.clock {
+  margin: auto;
+}
+.clock-numbers {
+  font-size: 8rem;
+  margin: auto;
+}
+
+.start-stop,
+.edit-buttons {
+  text-align: center;
+}
+.buttons {
+  margin: auto;
+  display: flex;
+}
+
+.buttons button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: rgba(243, 237, 231, 0.658);
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid rgba(0, 0, 0, 0.658);
+  width: 120px;
+  height: 70px;
+  text-align: center;
+}
+
+.buttons button:hover {
+  animation-name: color;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  cursor: pointer;
+  opacity: 0.8;
+  background-color: rgba(156, 149, 141, 0.658);
+}
+/* @keyframes color {
+  50% {
+    background-color: rgba(204, 200, 196, 0.658);
+  }
+  100% {
+    background-color: rgba(156, 149, 141, 0.658);
+  }
+} */
+
+@media (max-width: 1200px) {
+  body {
+    flex-direction: column;
+  }
+  .buttons {
+    margin-top: -10%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  .clock-numbers {
+    font-size: 6rem;
+    margin: auto;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  .buttons button {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .clock-numbers {
+    font-size: 5rem;
+    margin: auto;
+  }
+  .buttons button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 300px) {
+  .clock-numbers {
+    font-size: 3rem;
+    margin: auto;
+  }
+  .buttons button {
+    font-size: 1rem;
+    width: 100px;
+    height: 60px;
+  }
+}

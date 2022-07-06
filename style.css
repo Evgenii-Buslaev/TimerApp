@@ -12,10 +12,13 @@ body {
 }
 
 .clock {
+  width: 50%;
   margin: auto;
+  text-align: left;
 }
 .clock-numbers {
-  text-align: center;
+  width: 500px;
+  text-align: left;
   font-size: 8rem;
   margin: auto;
 }
@@ -24,6 +27,7 @@ body {
 .edit-buttons {
   text-align: center;
 }
+
 .control-panel {
   display: flex;
   flex-direction: column;
@@ -53,23 +57,29 @@ body {
 .buttons button:hover {
   cursor: pointer;
   opacity: 0.8;
+  transition-property: background-color;
+  transition-duration: 1s;
   background-color: rgba(156, 149, 141, 0.658);
 }
-/* @keyframes color {
-  50% {
-    background-color: rgba(204, 200, 196, 0.658);
-  }
-  100% {
-    background-color: rgba(156, 149, 141, 0.658);
-  }
-} */
 
 @media (max-width: 1200px) {
   body {
     flex-direction: column;
   }
+  .clock {
+    width: 100%;
+  }
+  .clock-numbers {
+    width: 500px;
+    text-align: left;
+  }
   .buttons {
     margin-top: -10%;
+  }
+}
+@media (max-width: 700px) {
+  .clock-numbers {
+    text-align: left;
   }
 }
 
@@ -77,8 +87,13 @@ body {
   body {
     flex-direction: column;
   }
+  .clock {
+    width: 100%;
+  }
   .clock-numbers {
-    font-size: 6rem;
+    width: 430px;
+    text-align: left;
+    font-size: 7rem;
     margin: auto;
   }
   .buttons {
@@ -89,14 +104,29 @@ body {
     font-size: 1.5rem;
   }
 }
+@media (max-width: 530px) {
+  .clock-numbers {
+    font-size: 5rem;
+    text-align: left;
+    width: 330px;
+  }
+}
 
 @media (max-width: 400px) {
   .clock-numbers {
-    font-size: 3rem;
+    text-align: left;
+    width: 260px;
+    font-size: 4rem;
     margin: auto;
   }
   .buttons button {
     font-size: 1rem;
+  }
+}
+@media (max-width: 350px) {
+  .clock-numbers {
+    text-align: left;
+    width: 260px;
   }
 }
 @media (max-width: 300px) {
@@ -104,7 +134,8 @@ body {
     margin-top: -100px;
   }
   .clock-numbers {
-    text-align: center;
+    width: 200px;
+    text-align: left;
     font-size: 3rem;
     margin: auto;
   }
@@ -128,9 +159,4 @@ body {
 .loop {
   font-size: 2rem;
   text-align: center;
-}
-
-.animated {
-  transition-property: background-color;
-  transition-duration: 3s;
 }

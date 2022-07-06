@@ -5,6 +5,7 @@ const loopBtn = document.querySelector(".loop-btn");
 const resetBtn = document.querySelector(".restart-btn");
 const btnsContainer = document.querySelector(".buttons");
 const loopContainer = document.querySelector(".loop-container");
+const contolPanel = document.querySelector(".control-panel");
 
 //cathing running timer to this variable
 let runningInterval;
@@ -87,3 +88,5 @@ startBtn.addEventListener("click", startTimer);
 stopBtn.addEventListener("click", stopTimer);
 loopBtn.addEventListener("click", takeLoop);
 resetBtn.addEventListener("click", resetTimer);
+
+// animation functions

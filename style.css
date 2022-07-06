@@ -23,6 +23,12 @@ body {
 .edit-buttons {
   text-align: center;
 }
+.control-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
 .buttons {
   margin: auto;
   display: flex;
@@ -104,4 +110,15 @@ body {
     width: 100px;
     height: 60px;
   }
+}
+
+.loop-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loop {
+  font-size: 2rem;
 }

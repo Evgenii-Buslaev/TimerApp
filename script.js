@@ -11,6 +11,10 @@ let runningInterval;
 
 // functions of timer
 function startTimer() {
+  if (runningInterval) {
+    alert("Click 'reset' to start a new timer");
+    return;
+  }
   let ms = 0;
   let sec = 0;
   let min = 0;

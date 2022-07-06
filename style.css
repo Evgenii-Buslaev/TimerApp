@@ -16,6 +16,7 @@ body {
   margin: auto;
   text-align: left;
 }
+
 .clock-numbers {
   width: 500px;
   text-align: left;
@@ -34,6 +35,7 @@ body {
   align-items: center;
   margin: auto;
 }
+
 .buttons {
   margin: auto;
   margin-top: 14.5rem;
@@ -77,6 +79,7 @@ body {
     margin-top: -10%;
   }
 }
+
 @media (max-width: 700px) {
   .clock-numbers {
     text-align: left;
@@ -92,9 +95,7 @@ body {
   }
   .clock-numbers {
     width: 430px;
-    text-align: left;
     font-size: 7rem;
-    margin: auto;
   }
   .buttons {
     display: flex;
@@ -104,40 +105,37 @@ body {
     font-size: 1.5rem;
   }
 }
+
 @media (max-width: 530px) {
   .clock-numbers {
     font-size: 5rem;
-    text-align: left;
     width: 330px;
   }
 }
 
 @media (max-width: 400px) {
   .clock-numbers {
-    text-align: left;
     width: 260px;
     font-size: 4rem;
-    margin: auto;
   }
   .buttons button {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 350px) {
   .clock-numbers {
-    text-align: left;
     width: 260px;
   }
 }
+
 @media (max-width: 300px) {
   .buttons {
     margin-top: -100px;
   }
   .clock-numbers {
     width: 200px;
-    text-align: left;
     font-size: 3rem;
-    margin: auto;
   }
   .buttons button {
     font-size: 1rem;

@@ -6,6 +6,7 @@ const resetBtn = document.querySelector(".restart-btn");
 const btnsContainer = document.querySelector(".buttons");
 const loopContainer = document.querySelector(".loop-container");
 const contolPanel = document.querySelector(".control-panel");
+const loopContainerBtns = document.querySelector(".loop-container-btns");
 
 //cathing running timer to this variable
 let runningInterval;
@@ -63,17 +64,22 @@ function stopTimer() {
 
 // catching element of loop (for event)
 let elem;
+let rclBinBtn;
 
 //put a loop function
 function takeLoop() {
   if (!runningInterval) {
     alert("No timers are running!");
   } else {
+    // creating a loop
     let loopNodeList = document.querySelectorAll(".loop");
 
-    if (loopNodeList.length > 5) {
-      loopContainer.removeChild(loopContainer.firstChild);
-      loopNodeList[1].style.opacity = "0";
+    if (loopNodeList.length >= 5) {
+      loopContainer.firstChild.style.opacity = "0";
+      loopContainer.firstChild.style.marginTop = "-2.3rem";
+      setTimeout(() => {
+        loopContainer.removeChild(loopContainer.firstChild);
+      }, 1000);
     }
 
     let loop = document.createElement("div");
@@ -81,6 +87,19 @@ function takeLoop() {
     loop.innerText = clock.innerText;
     loopContainer.appendChild(loop);
     elem = loop;
+
+    // creatong a loop delete button
+    if (!rclBinBtn) {
+      rclBinBtn = document.createElement("div");
+      let rclIcon = document.createElement("img");
+      rclIcon.setAttribute("src", "Icons/RecycleBin.png");
+      rclIcon.style.width = "2rem";
+      rclIcon.style.height = "2rem";
+      rclBinBtn.style.marginTop = "7rem";
+      rclBinBtn.appendChild(rclIcon);
+      loopContainer.style.marginLeft = "2rem";
+      loopContainerBtns.append(rclBinBtn);
+    }
   }
 }
 
@@ -116,5 +135,3 @@ loopBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", resetTimer);
-
-// animation functions

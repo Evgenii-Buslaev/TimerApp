@@ -61,7 +61,8 @@ body {
 .buttons button:hover {
   cursor: pointer;
   opacity: 0.8;
-  background-color: rgba(156, 149, 141, 0.658);
+  background-color: rgba(0, 0, 0, 0.658);
+  color: rgba(243, 237, 231, 0.658);
 }
 
 @media (min-width: 1470px) {
@@ -160,7 +161,13 @@ body {
   }
 }
 
+.loop-container-btns {
+  display: flex;
+}
+
 .loop-container {
+  /*   border: solid black; */
+  padding-top: 5px;
   margin-top: 2rem;
   width: 200px;
   height: 200px;

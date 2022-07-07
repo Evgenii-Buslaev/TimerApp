@@ -171,6 +171,7 @@ body {
 }
 
 .loop {
+  opacity: 0;
   font-size: 2rem;
   text-align: center;
   transition-property: all;

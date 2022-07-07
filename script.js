@@ -50,6 +50,7 @@ function startTimer(ms, sec, min) {
   }, 12.5);
 }
 
+// function to stop timer
 function stopTimer() {
   if (runningInterval) {
     clearInterval(runningInterval);
@@ -60,22 +61,26 @@ function stopTimer() {
   }
 }
 
+// catching element of loop (for event)
+let elem;
+
+//put a loop function
 function takeLoop() {
   if (!runningInterval) {
     alert("No timers are running!");
   } else {
     let loopNodeList = document.querySelectorAll(".loop");
 
-    if (loopNodeList.length > 4) {
+    if (loopNodeList.length > 5) {
       loopContainer.removeChild(loopContainer.firstChild);
-      loopNodeList[1].style.opacity = "0.3";
+      loopNodeList[1].style.opacity = "0";
     }
 
     let loop = document.createElement("div");
     loop.classList.add("loop");
     loop.innerText = clock.innerText;
     loopContainer.appendChild(loop);
-    /*  loop.style.opacity = "0.3"; */
+    elem = loop;
   }
 }
 
@@ -101,7 +106,15 @@ startBtn.addEventListener("click", () => {
 });
 
 stopBtn.addEventListener("click", stopTimer);
-loopBtn.addEventListener("click", takeLoop);
+
+loopBtn.addEventListener("click", () => {
+  takeLoop();
+  setTimeout(() => {
+    elem.style.opacity = "1";
+    elem.style.top = "5px";
+  }, 0);
+});
+
 resetBtn.addEventListener("click", resetTimer);
 
 // animation functions

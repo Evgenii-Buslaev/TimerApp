@@ -11,14 +11,14 @@ const contolPanel = document.querySelector(".control-panel");
 let runningInterval;
 
 // functions of timer
-function startTimer() {
+function startTimer(ms, sec, min) {
   if (runningInterval) {
     alert("Click 'reset' to start a new timer");
     return;
   }
-  let ms = 0;
-  let sec = 0;
-  let min = 0;
+  if (startBtn.innerText === "Continue") {
+    startBtn.innerText = "Start";
+  }
   runningInterval = setInterval(() => {
     // timer calculations
     clock.innerText = `${min}:${sec}:${ms}`;
@@ -55,6 +55,9 @@ function stopTimer() {
     clearInterval(runningInterval);
     runningInterval = null;
   }
+  if (clock.innerText != "00:00:00") {
+    startBtn.innerText = "Continue";
+  }
 }
 
 function takeLoop() {
@@ -77,14 +80,24 @@ function takeLoop() {
 function resetTimer() {
   if (runningInterval) {
     stopTimer();
-    startTimer();
+    startTimer(0, 0, 0);
   } else {
     clock.innerText = "00:00:00";
+    startBtn.innerText = "Start";
   }
 }
 
 // events
-startBtn.addEventListener("click", startTimer);
+startBtn.addEventListener("click", () => {
+  let takenNumber = clock.innerText;
+  let continueTime = takenNumber.split(":");
+  let ms = continueTime[2];
+  let sec = continueTime[1];
+  let min = continueTime[0];
+
+  startTimer(ms, sec, min);
+});
+
 stopBtn.addEventListener("click", stopTimer);
 loopBtn.addEventListener("click", takeLoop);
 resetBtn.addEventListener("click", resetTimer);

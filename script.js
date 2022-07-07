@@ -68,12 +68,14 @@ function takeLoop() {
 
     if (loopNodeList.length > 4) {
       loopContainer.removeChild(loopContainer.firstChild);
+      loopNodeList[1].style.opacity = "0.3";
     }
 
     let loop = document.createElement("div");
     loop.classList.add("loop");
     loop.innerText = clock.innerText;
     loopContainer.appendChild(loop);
+    /*  loop.style.opacity = "0.3"; */
   }
 }
 

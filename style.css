@@ -166,15 +166,15 @@ body {
 }
 
 .loop-container {
-  /*   border: solid black; */
   padding-top: 5px;
   margin-top: 2rem;
   width: 200px;
-  height: 200px;
+  height: 185px;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  overflow: auto;
 }
 
 .loop {

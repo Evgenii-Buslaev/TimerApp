@@ -71,16 +71,18 @@ function takeLoop() {
   if (!runningInterval) {
     alert("No timers are running!");
   } else {
-    // creating a loop
+    // if there are some loops
     let loopNodeList = document.querySelectorAll(".loop");
 
     if (loopNodeList.length >= 5) {
-      loopContainer.firstChild.style.opacity = "0";
-      loopContainer.firstChild.style.marginTop = "-2.3rem";
       setTimeout(() => {
-        loopContainer.removeChild(loopContainer.firstChild);
-      }, 1000);
+        loop.scrollIntoView({
+          behavior: "smooth",
+        });
+      }, 0);
     }
+
+    // creating a loop
 
     let loop = document.createElement("div");
     loop.classList.add("loop");

@@ -31,12 +31,12 @@ body {
 
 .arrow-seconds {
   z-index: 4;
-  left: 50%;
+  left: 49.7%;
   top: 200px;
   position: relative;
   height: 200px;
-  width: 3px;
-  background-color: black;
+  width: 5px;
+  background-color: rgb(196, 96, 96);
 }
 .clock-numbers {
   width: 500px;
@@ -207,14 +207,8 @@ body {
 }
 
 @media (max-width: 300px) {
-  .clock-image {
-    padding-left: 40px;
-  }
-  .buttons {
-    margin-top: -80px;
-  }
   .clock-numbers {
-    width: 200px;
+    width: 260px;
     font-size: 3rem;
   }
   .buttons button {

@@ -65,6 +65,7 @@ function stopTimer() {
 // catching element of loop (for event)
 let elem;
 let rclBinBtn;
+let clearBtn;
 
 //put a loop function
 function takeLoop() {
@@ -81,16 +82,35 @@ function takeLoop() {
         });
       }, 0);
     }
-
     // creating a loop
-
     let loop = document.createElement("div");
     loop.classList.add("loop");
     loop.innerText = clock.innerText;
     loopContainer.appendChild(loop);
     elem = loop;
-
     // creatong a loop delete button
+    if (!clearBtn) {
+      clearBtn = document.createElement("div");
+      let clearIcon = document.createElement("img");
+      clearIcon.setAttribute("src", "Icons/ClearBtn.png");
+      clearIcon.style.width = "2rem";
+      clearIcon.style.height = "2rem";
+      clearBtn.style.marginTop = "7rem";
+      clearBtn.appendChild(clearIcon);
+      loopContainer.style.marginLeft = "2rem";
+      loopContainerBtns.append(clearBtn);
+
+      clearBtn.addEventListener("click", () => {
+        let loopNodeList = document.querySelectorAll(".loop");
+        let lastLoop = loopNodeList[loopNodeList.length - 1];
+        lastLoop.style.opacity = "0";
+        lastLoop.style.marginTop = "-2.3rem";
+        setTimeout(() => {
+          lastLoop.parentNode.removeChild(lastLoop);
+        }, 1000);
+      });
+    }
+    // creatong a recycle bin
     if (!rclBinBtn) {
       rclBinBtn = document.createElement("div");
       let rclIcon = document.createElement("img");
@@ -101,6 +121,18 @@ function takeLoop() {
       rclBinBtn.appendChild(rclIcon);
       loopContainer.style.marginLeft = "2rem";
       loopContainerBtns.append(rclBinBtn);
+
+      rclBinBtn.addEventListener("click", () => {
+        let loopNodeList = document.querySelectorAll(".loop");
+        for (let i = 0; i < loopNodeList.length; i++) {
+          loopNodeList[i].parentNode.removeChild(loopNodeList[i]);
+        }
+
+        clearBtn.remove();
+        rclBinBtn.remove();
+        clearBtn = null;
+        rclBinBtn = null;
+      });
     }
   }
 }

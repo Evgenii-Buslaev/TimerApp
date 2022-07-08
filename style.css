@@ -163,6 +163,7 @@ body {
 
 .loop-container-btns {
   display: flex;
+  margin-left: 2rem;
 }
 
 .loop-container {

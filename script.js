@@ -7,6 +7,7 @@ const btnsContainer = document.querySelector(".buttons");
 const loopContainer = document.querySelector(".loop-container");
 const contolPanel = document.querySelector(".control-panel");
 const loopContainerBtns = document.querySelector(".loop-container-btns");
+const arrow = document.querySelector(".arrow-seconds");
 
 //cathing running timer to this variable
 let runningInterval;
@@ -17,13 +18,17 @@ function startTimer(ms, sec, min) {
     alert("Click 'reset' to start a new timer");
     return;
   }
+
   if (startBtn.innerText === "Continue") {
     startBtn.innerText = "Start";
   }
+
   runningInterval = setInterval(() => {
     // timer calculations
     clock.innerText = `${min}:${sec}:${ms}`;
     ms++;
+    arrow.style.transition = `1s`;
+    arrow.style.transform = `rotate(${6 * sec}deg)`;
     if (ms == 80) {
       sec++;
       ms = 0;
@@ -142,6 +147,7 @@ function resetTimer() {
     stopTimer();
     startTimer(0, 0, 0);
   } else {
+    arrow.style.transform = `rotate(+0deg)`;
     clock.innerText = "00:00:00";
     startBtn.innerText = "Start";
   }

@@ -38,7 +38,7 @@ body {
   position: relative;
   height: 399px;
   width: 5px;
-  animation: rotate 30s infinite linear;
+  /*   animation: rotate 60s infinite linear; */
 }
 
 .arrow-up {
@@ -287,7 +287,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .loop {

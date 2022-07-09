@@ -7,9 +7,10 @@
 body {
   display: flex;
   min-height: 100vh;
-  background: rgba(243, 237, 231, 0.658);
+  background: rgba(170, 206, 245, 0.425);
   color: rgb(17, 17, 17);
 }
+/* rgba(243, 237, 231, 0.658); */
 
 .clock {
   z-index: 2;
@@ -92,11 +93,10 @@ body {
   outline: none;
   transition-property: all;
   transition-duration: 0.5s;
-  background-color: rgba(243, 237, 231, 0.658);
+  background-color: rgba(39, 63, 65, 0.658);
   font-size: 1.5rem;
   padding: 1rem;
   margin: 1rem;
-  border: solid rgba(0, 0, 0, 0.658);
   width: 150px;
   height: 70px;
   text-align: center;
@@ -105,8 +105,8 @@ body {
 .buttons button:hover {
   cursor: pointer;
   opacity: 0.8;
-  background-color: rgba(0, 0, 0, 0.658);
-  color: rgba(243, 237, 231, 0.658);
+  background-color: rgba(15, 40, 66, 0.425);
+  color: rgba(206, 225, 245, 0.425);
 }
 
 @media (min-width: 1470px) {
@@ -287,7 +287,7 @@ body {
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .loop {

@@ -129,14 +129,26 @@ function takeLoop() {
 
       rclBinBtn.addEventListener("click", () => {
         let loopNodeList = document.querySelectorAll(".loop");
-        for (let i = 0; i < loopNodeList.length; i++) {
-          loopNodeList[i].parentNode.removeChild(loopNodeList[i]);
-        }
+        clearBtn.style.transitionProperty = "all";
+        clearBtn.style.transitionDuration = "1s";
+        clearBtn.style.opacity = "0";
+        rclBinBtn.style.transitionProperty = "all";
+        rclBinBtn.style.transitionDuration = "1s";
+        rclBinBtn.style.opacity = "0";
 
-        clearBtn.remove();
-        rclBinBtn.remove();
-        clearBtn = null;
-        rclBinBtn = null;
+        rclBinBtn.style.opacity = "0";
+        for (let i = 0; i < loopNodeList.length; i++) {
+          loopNodeList[i].style.opacity = "0";
+          setTimeout(() => {
+            loopNodeList[i].parentNode.removeChild(loopNodeList[i]);
+          }, 1000);
+        }
+        setTimeout(() => {
+          clearBtn.remove();
+          rclBinBtn.remove();
+          clearBtn = null;
+          rclBinBtn = null;
+        }, 1000);
       });
     }
   }

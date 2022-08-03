@@ -111,7 +111,7 @@ function takeLoop() {
         lastLoop.style.opacity = "0";
         lastLoop.style.marginTop = "-2.3rem";
         setTimeout(() => {
-          lastLoop.parentNode.removeChild(lastLoop);
+          lastLoop.parentNode?.removeChild(lastLoop);
         }, 1000);
       });
     }
@@ -140,7 +140,7 @@ function takeLoop() {
         for (let i = 0; i < loopNodeList.length; i++) {
           loopNodeList[i].style.opacity = "0";
           setTimeout(() => {
-            loopNodeList[i].parentNode.removeChild(loopNodeList[i]);
+            loopNodeList[i]?.parentNode.removeChild(loopNodeList[i]);
           }, 1000);
         }
         setTimeout(() => {

@@ -6,11 +6,12 @@
 
 body {
   display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background: rgba(170, 206, 245, 0.425);
   color: rgb(17, 17, 17);
 }
-/* rgba(243, 237, 231, 0.658); */
 
 .clock {
   z-index: 2;
@@ -75,15 +76,15 @@ body {
 .control-panel {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 0 auto;
   margin-top: 12rem;
 }
 
 .buttons {
   z-index: 6;
   margin: auto;
-  margin-top: 10.5rem;
   display: flex;
 }
 
